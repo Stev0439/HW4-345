@@ -6,7 +6,7 @@ var urlRoot = "https://api.github.com";
 // NCSU Enterprise endpoint:
 //var urlRoot = "https://api.github.ncsu.edu";
 
-var userId = "yy2111";
+var userId = "Stev0439";
 var config = {};
 // Retrieve our api token from the environment variables.
 config.token = process.env.GITHUBTOKEN;
@@ -68,7 +68,7 @@ function listAuthenicatedUserRepos()
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
 	{
-		request(options, function (error, response, body) 
+		request(options, function (error, response, body)
 		{
 			if( error )
 			{
@@ -152,7 +152,7 @@ async function enableWikiSupport(owner,repo)
 
 			resolve( JSON.parse(body) );
 		});
-	});	
+	});
 }
 
 module.exports.getUser = getUser;
@@ -161,5 +161,3 @@ module.exports.listBranches = listBranches;
 module.exports.createRepo = createRepo;
 module.exports.createIssue = createIssue;
 module.exports.enableWikiSupport = enableWikiSupport;
-
-
