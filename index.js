@@ -27,7 +27,7 @@ if (process.env.NODE_ENV != 'test')
 		await listAuthenicatedUserRepos();
 		await listBranches(userId, "Githubapi567");
 		await createRepo(userId,"newrepo");
-		await createIssue(userId, "HW4-345", "issue head", "issue body");
+		await createIssue(userId, "567Trangle", "issue head", "issue body");
 		//await enableWikiSupport(userId,repo);
 
 	})()
