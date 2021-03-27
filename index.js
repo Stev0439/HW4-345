@@ -130,7 +130,12 @@ async function createRepo(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-			console.log(options.name);
+			var obj = JSON.parse(body);
+			for( var i = 0; i < obj.length; i++ )
+			{
+				var name = obj[i].name;
+				console.log( name );
+			}
 			resolve( response.statusCode );
 
 		});
