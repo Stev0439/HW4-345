@@ -151,7 +151,7 @@ async function createIssue(owner,repo, issueName, issueBody)
 	let options = getDefaultOptions(`/repos/${owner}/${repo}/issues`, "POST");
 	options.json = {
 		title: issueName,
-		body = issueBody
+		body: = issueBody
 	};
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
