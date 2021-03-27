@@ -130,6 +130,7 @@ async function createRepo(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
+			console.log(options.name);
 			resolve( response.statusCode );
 
 		});
