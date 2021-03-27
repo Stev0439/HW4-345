@@ -131,11 +131,9 @@ async function createRepo(owner,repo)
 				return; // Terminate execution.
 			}
 			var obj = JSON.parse(body);
-			for( var i = 0; i < obj.length; i++ )
-			{
-				var name = obj[i].name;
-				console.log( name );
-			}
+			var name = obj.name;
+			console.log( name );
+
 			resolve( response.statusCode );
 
 		});
