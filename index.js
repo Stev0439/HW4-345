@@ -26,7 +26,7 @@ if (process.env.NODE_ENV != 'test')
 	(async () => {
 		await listAuthenicatedUserRepos();
 		await listBranches(userId, "Githubapi567");
-		await createRepo(userId,newrepo);
+		await createRepo(userId,"newrepo");
 		//await createIssue(userId, repo, issue);
 		//await enableWikiSupport(userId,repo);
 
@@ -128,7 +128,7 @@ async function createRepo(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-			name: 'name'
+			name: repo
 			console.debug(options);
 			resolve( response.statusCode );
 
