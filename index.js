@@ -116,7 +116,7 @@ async function listBranches(owner,repo)
 // 2. Write code to create a new repo
 async function createRepo(owner,repo)
 {
-	let options = getDefaultOptions("/orgs/Stev0439/repos", "POST");
+	let options = getDefaultOptions("/user/repos", "POST");
 
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
@@ -129,6 +129,7 @@ async function createRepo(owner,repo)
 				return; // Terminate execution.
 			}
 			name: repo
+
 			console.debug(options);
 			resolve( response.statusCode );
 
