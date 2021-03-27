@@ -116,7 +116,7 @@ async function listBranches(owner,repo)
 // 2. Write code to create a new repo
 async function createRepo(owner,repo)
 {
-	let options = getDefaultOptions(`/repos/${owner}/${repo}/generate`, "POST");
+	let options = getDefaultOptions("/Stev0439/repos", "POST");
 	options.json = {
 		name: repo
 	};
