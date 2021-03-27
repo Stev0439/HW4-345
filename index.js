@@ -117,10 +117,9 @@ async function listBranches(owner,repo)
 async function createRepo(owner,repo)
 {
 	let options = getDefaultOptions("/user/repos", "POST");
-	options.data = JSON.stringify({"name":repo});
-	// options.json = {
-	// 	name: repo
-	// };
+	options.json = {
+		name: repo
+	};
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
 	{
@@ -131,15 +130,9 @@ async function createRepo(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-			var statusCode = JSON.parse(body);
-			if(statusCode == 200){
-				console.log(JSON.name + " has been created");
-			}
-			else{
-				console.log("failed");
-			}
 
 			resolve( response.statusCode );
+			console.log(response.statusCode);
 
 		});
 	});
@@ -164,7 +157,7 @@ async function createIssue(owner,repo, issueName, issueBody)
 				return; // Terminate execution.
 			}
 			resolve( response.statusCode );
-
+			console.log(response.statusCode);
 		});
 	});
 }
