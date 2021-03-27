@@ -117,7 +117,7 @@ async function listBranches(owner,repo)
 async function createRepo(owner,repo)
 {
 	let options = getDefaultOptions("/user/repos", "POST");
-	options.data = JSON.stringify({repo});
+	options.data = JSON.stringify({"name":repo});
 	// options.json = {
 	// 	name: repo
 	// };
@@ -132,7 +132,7 @@ async function createRepo(owner,repo)
 				return; // Terminate execution.
 			}
 			var statusCode = JSON.parse(body);
-			if(statusCode == 201){
+			if(statusCode == 200){
 				console.log(JSON.name + " has been created");
 			}
 			else{
