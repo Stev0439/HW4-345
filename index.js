@@ -117,6 +117,7 @@ async function listBranches(owner,repo)
 async function createRepo(owner,repo)
 {
 	let options = getDefaultOptions("/user/repos", "POST");
+	options.data = JSON.stringify({repo});
 	// options.json = {
 	// 	name: repo
 	// };
