@@ -134,6 +134,9 @@ async function createRepo(owner,repo)
 			if(statusCode == 200){
 				console.log(JSON.name + " has been created");
 			}
+			else{
+				console.log("failed");
+			}
 
 			resolve( response.statusCode );
 
