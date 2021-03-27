@@ -129,6 +129,7 @@ async function createRepo(owner,repo)
 				return; // Terminate execution.
 			}
 			name: 'name'
+			console.debug(options);
 			resolve( response.statusCode );
 
 		});
