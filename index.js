@@ -132,7 +132,7 @@ async function createRepo(owner,repo)
 				return; // Terminate execution.
 			}
 			var statusCode = JSON.parse(body);
-			if(statusCode == 200){
+			if(statusCode == 201){
 				console.log(JSON.name + " has been created");
 			}
 			else{
