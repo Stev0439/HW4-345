@@ -130,9 +130,10 @@ async function createRepo(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-			var obj = JSON.parse(body);
-			var name = obj.name;
-			console.log( name );
+			var statusCode = JSON.parse(body);
+			if(statusCode == 200){
+				console.log(JSON.name + " has been created");
+			}
 
 			resolve( response.statusCode );
 
