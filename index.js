@@ -106,13 +106,7 @@ async function listBranches(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-			var obj = JSON.parse(body);
-			for( var i = 0; i < obj.length; i++ )
-			{
-				var name = obj[i].branch;
-				console.log( name );
-			}
-			console.debug( options );
+			console.debug( JSON.parse(body) );
 			resolve( JSON.parse(body) );
 
 		});
