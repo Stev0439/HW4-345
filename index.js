@@ -106,7 +106,8 @@ async function listBranches(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-
+			var obj = JSON.parse(body);
+			console.log(obj.branches);
 			console.debug( options );
 			resolve( JSON.parse(body) );
 
