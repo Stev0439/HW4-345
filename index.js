@@ -117,7 +117,9 @@ async function listBranches(owner,repo)
 async function createRepo(owner,repo)
 {
 	let options = getDefaultOptions("/user/repos", "POST");
-
+	options.JSON = {
+		name: repo
+	};
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
 	{
@@ -128,7 +130,7 @@ async function createRepo(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-			name: repo
+
 
 			console.debug(options);
 			resolve( response.statusCode );
