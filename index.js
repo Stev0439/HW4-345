@@ -180,8 +180,8 @@ async function enableWikiSupport(owner,repo)
 				reject(error);
 				return; // Terminate execution.
 			}
-
-			resolve( JSON.parse(body) );
+			resolve( response.statusCode );
+			//resolve( JSON.parse(body) );
 			console.log("Status code: " + response.statusCode);
 		});
 	});
