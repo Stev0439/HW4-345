@@ -132,7 +132,7 @@ async function createRepo(owner,repo)
 			}
 
 			resolve( response.statusCode );
-			console.log(response.statusCode);
+			console.log("Status code: " + response.statusCode);
 
 		});
 	});
@@ -157,7 +157,7 @@ async function createIssue(owner,repo, issueName, issueBody)
 				return; // Terminate execution.
 			}
 			resolve( response.statusCode );
-			console.log(response.statusCode);
+			console.log("Status code: " + response.statusCode);
 		});
 	});
 }
@@ -165,14 +165,24 @@ async function createIssue(owner,repo, issueName, issueBody)
 // 4. Write code for editing a repo to enable wiki support.
 async function enableWikiSupport(owner,repo)
 {
-	let options = getDefaultOptions("/", "PATCH");
+	let options = getDefaultOptions(`/repos/${owner}/${repo}`, "PATCH");
+	options.json = {
+		has_wiki = true;
+	}
 
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
 	{
 		request(options, function (error, response, body) {
+			if( error )
+			{
+				console.log( chalk.red( error ));
+				reject(error);
+				return; // Terminate execution.
+			}
 
 			resolve( JSON.parse(body) );
+			console.log("Status code: " + response.statusCode);
 		});
 	});
 }
