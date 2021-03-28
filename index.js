@@ -167,7 +167,7 @@ async function enableWikiSupport(owner,repo)
 {
 	let options = getDefaultOptions(`/repos/${owner}/${repo}`, "PATCH");
 	options.json = {
-		has_wiki = true
+		has_wiki: true
 	};
 
 	// Send a http request to url and specify a callback that will be called upon its return.
